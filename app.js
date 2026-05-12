@@ -27,7 +27,7 @@ app.get('/api/time', (req, res) => {
   });
 });
  app.get('/api/greeting', (req, res) => { 
-   const name = req.query.name || 'Merrav'; 
+   const name = req.query.name || 'Prag'; 
    res.json({ greeting: 'Hello, ' + name + '!' }); 
 
 });
