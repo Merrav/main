@@ -1,23 +1,28 @@
 const express = require('express');
+const path = require('path');
 const app = express();
 const port = 3000;
 
 app.use(express.static('public'));
 
 app.get('/', (req, res) => {
-  res.send('Hello! This is my first Code Project.');
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 app.get('/about', (req, res) => {
-  res.send('This is my about page. I built this website and server myself!');
+  res.sendFile(path.join(__dirname, 'public', 'about.html'));
 });
 
 app.get('/contact', (req, res) => {
-  res.send('Contact me at: rishoomim@gmail.com');
+  res.sendFile(path.join(__dirname, 'public', 'contact.html'));
 });
 
 app.get('/Process', (req, res) => {
-  res.send('Send me an email for my Process list');
+  res.sendFile(path.join(__dirname, 'public', 'process.html'));
+});
+
+app.get('/greeting', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'greeting.html'));
 });
 
 app.get('/api/time', (req, res) => {
@@ -26,13 +31,12 @@ app.get('/api/time', (req, res) => {
     date: new Date().toLocaleDateString()
   });
 });
- app.get('/api/greeting', (req, res) => { 
-   const name = req.query.name || 'Prag'; 
-   res.json({ greeting: 'Hello, ' + name + '!' }); 
 
+app.get('/api/greeting', (req, res) => {
+  const name = req.query.name || 'Prag';
+  res.json({ greeting: 'Hello, ' + name + '!' });
 });
 
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
-});console.log('Goto');
-
+});

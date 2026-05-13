@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My First Code Project</title>
+  <title>About — My Project</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -11,8 +11,8 @@
   <nav>
     <div class="nav-logo">My Project</div>
     <ul class="nav-links">
-      <li><a href="/" class="active">Home</a></li>
-      <li><a href="/about">About</a></li>
+      <li><a href="/">Home</a></li>
+      <li><a href="/about" class="active">About</a></li>
       <li><a href="/contact">Contact</a></li>
       <li><a href="/greeting">Greeting</a></li>
       <li><button id="theme-toggle">Dark Mode</button></li>
@@ -20,24 +20,9 @@
   </nav>
 
   <section class="hero">
-    <h1>Welcome to My First Code Project</h1>
-    <p>This page is served by Node.js and Express. Built from scratch using Terminal.</p>
+    <h1>About</h1>
+    <p>This is my about page. I built this website and server myself!</p>
   </section>
-
-  <div class="cards">
-    <div class="card">
-      <h3>Server</h3>
-      <p>Running on Node.js with Express 5</p>
-    </div>
-    <div class="card">
-      <h3>API</h3>
-      <p>Live time, date, and greeting endpoints</p>
-    </div>
-    <div class="card">
-      <h3>Pages</h3>
-      <p>Home, About, Contact and more</p>
-    </div>
-  </div>
 
   <footer>
     <span>&copy; 2026 My Project</span>
@@ -48,12 +33,10 @@
   <script>
     const toggle = document.getElementById('theme-toggle');
     const body = document.body;
-
     if (localStorage.getItem('theme') === 'dark') {
       body.classList.add('dark');
       toggle.textContent = 'Light Mode';
     }
-
     toggle.addEventListener('click', () => {
       body.classList.toggle('dark');
       const isDark = body.classList.contains('dark');
